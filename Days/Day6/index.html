@@ -18,7 +18,7 @@
 
 <script>
   const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
-  
+
   /* Keep this const to avoid array being changed */
   const cities = []
 
@@ -29,7 +29,7 @@
   function findMatches(wordToMatch, cities) {
     return cities.filter(place => {
       /* Figure out if city or state matches search */
-      /* Using regex 
+      /* Using regex
       g : global
       i : insensitive ~lower case & uppercase
       */
