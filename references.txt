@@ -1,0 +1,34 @@
+-> Introducing JSON White Paper
+     : https://www.json.org/json-en.html
+
+-> How Javascript works
+     : https://www.amazon.com/dp/1949815005/wrrrldwideweb
+     : https://www.crockford.com/javascript/
+
+-> Good books on programming
+     : The C Programming Language by Kernighan and Ritchie
+     : Pragmatic Programmer
+     : Refactoring: Improving the Design of Existing Code
+     : Designing Data-Intensive Applications
+     : Mythical Man-Month
+     : Introduction to Algorithms by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein
+     : Don't Make Me Think ~ Steve Krug
+     : The Art of Computer Programming by Donald Knuth
+     : Clean Architecture - Robert C. Martin
+     : JavaScript: The Good Parts
+     : CSS Zen Garden
+     : Structure & Interpretation of Computer Programs
+     : Operating Systems - Design and Implementation ~ Andrew S. Tanenbaum
+     : Programming Windows by Charles Petzold : amzn.to/43XiLsO
+     : Code Complete by Steve McConnell : amzn.to/3XncK5Y
+
+-> Articles on Web Development
+     : The 5 pillars of every http request - https://dev.to/aminnairi/the-5-pillars-of-every-http-request-18ld
+
+-> Miscellaneous & Interesting
+     : Refine (React Framework) - https://dev.to/devteam/announcing-the-refine-dev-hackathon-29fn
+
+-> Una Kravits
+	: https://www.youtube.com/watch?v=BU9zgOTlMqk&t=1s
+	: https://www.youtube.com/watch?v=buChHSdsF9A
+
