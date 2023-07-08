@@ -63,7 +63,7 @@
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); // select html audio tag with specific sound
     const key = document.querySelector(`.key[data-key="${e.keyCode}"]`); // animation on css
     if(!audio) return; // stop the function from running all together
-    audio.currentTime = 0; // rewind aaato the start
+    audio.currentTime = 0; // rewind back to the start
     audio.play(); // calls audio tag to play
     key.classList.add('playing');
   }
