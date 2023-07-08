@@ -105,9 +105,9 @@
     let checkedInputs = []
     inputs.forEach((item, index) => {
 
-      // save last checked input 
+      // save last checked input
       item.addEventListener('click', (e) => {
-        
+
         if (e.target.checked === true) {
           checkedInputs.push(index)
           console.log(checkedInputs)
@@ -118,7 +118,7 @@
           let lastInputChecked = checkedInputs.pop()
           if (!lastInputChecked) {return}
           console.log(lastInputChecked)
-          
+
           if (lastInputChecked < e.index) {
             for (let i = lastInputChecked; i < index; i++) {
               inputs[i].target.checked = true
@@ -132,7 +132,7 @@
         }
       })
     })
-  
+
 
 /*
 
@@ -140,8 +140,7 @@ if (item.target.checked === true) {}
 console.log(e.target.checked)
 console.log(e.shiftKey)
 */
-    
+
   </script>
 </body>
 </html>
-
