@@ -98,48 +98,25 @@
 
   <script>
     // select all inputs checkboxes
-    const inputs = Array.from(document.querySelectorAll('input[type=checkbox]'))
-    console.log(inputs)
-    // if any is checked, find it.
+    const inputs = document.querySelectorAll('input[type=checkbox]')
 
-    let checkedInputs = []
-    inputs.forEach((item, index) => {
+    /* What was the last checkbox checked? */
+    let lastChecked;
 
-      // save last checked input 
-      item.addEventListener('click', (e) => {
-        
-        if (e.target.checked === true) {
-          checkedInputs.push(index)
-          console.log(checkedInputs)
-        }
-
-        if (e.shiftKey === true) {
-
-          let lastInputChecked = checkedInputs.pop()
-          if (!lastInputChecked) {return}
-          console.log(lastInputChecked)
-          
-          if (lastInputChecked < e.index) {
-            for (let i = lastInputChecked; i < index; i++) {
-              inputs[i].target.checked = true
-            }
-          }
-          else if (lastInputChecked > e.index) {
-            for (let i = lastInputChecked; i > index ; i--) {
-              inputs[i].target.checked = true
-            }
-          }
-        }
-      })
-    })
-  
-
-/*
-
-if (item.target.checked === true) {}
-console.log(e.target.checked)
-console.log(e.shiftKey)
-*/
+    function handleCheck(e) {
+      // Check if they had the shift key down
+      // AND check that they are checking it
+      let inBetween = false;
+      if (e.shiftKey && this.checked) {
+        inputs.forEach(checkbox => {
+          if (checkbox === this || checkbox === lastChecked) {inBetween = !inBetween}
+          if (inBetween) {checkbox.checked = true;}
+        })
+      }
+      lastChecked = this;
+    }
+    inputs.forEach(checkbox => checkbox.addEventListener('click', handleCheck))
+    
     
   </script>
 </body>
