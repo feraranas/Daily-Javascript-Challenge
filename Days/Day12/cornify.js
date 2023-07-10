@@ -1,12 +1,14 @@
 /*
 
-    _______      ,-----.    .-------.    ,---.   .--..-./`)  ________    ____     __
-   /   __  \   .'  .-,  '.  |  _ _   \   |    \  |  |\ .-.')|        |   \   \   /  /
-  | ,_/  \__) / ,-.|  \ _ \ | ( ' )  |   |  ,  \ |  |/ `-' \|   .----'    \  _. /  '
-,-./  )      ;  \  '_ /  | :|(_ o _) /   |  |\_ \|  | `-'`"`|  _|____      _( )_ .'
-\  '_ '`)    |  _`,/ \ _/  || (_,_).' __ |  _( )_\  | .---. |_( )_   | ___(_ o _)'
- > (_)  )  __: (  '\_/ \   ;|  |\ \  |  || (_ o _)  | |   | (_ o._)__||   |(_,_)'
-(  .  .-'_/  )\ `"/  \  ) / |  | \ `'   /|  (_,_)\  | |   | |(_,_)    |   `-'  /
+    _______      ,-----.    .-------.    ,---.   .--..-./`)  ________    ____ __
+   /   __  \   .'  .-,  '.  |  _ _   \   |    \  |  |\ .-.')|        |   \   \
+/  / | ,_/  \__) / ,-.|  \ _ \ | ( ' )  |   |  ,  \ |  |/ `-' \|   .----'    \
+_. /  '
+,-./  )      ;  \  '_ /  | :|(_ o _) /   |  |\_ \|  | `-'`"`|  _|____      _( )_
+.' \  '_ '`)    |  _`,/ \ _/  || (_,_).' __ |  _( )_\  | .---. |_( )_   | ___(_
+o _)' > (_)  )  __: (  '\_/ \   ;|  |\ \  |  || (_ o _)  | |   | (_ o._)__||
+|(_,_)' (  .  .-'_/  )\ `"/  \  ) / |  | \ `'   /|  (_,_)\  | |   | |(_,_)    |
+`-'  /
  `-'`-'     /  '. \_/``".'  |  |  \    / |  |    |  | |   | |   |      \      /
    `._____.'     '-----'    ''-'   `'-'  '--'    '--' '---' '---'       `-..-'
 
@@ -53,7 +55,8 @@ var cornify_add = function (options) {
   }
 
   if (showGrandUnicorn) {
-    // Clicking 15 times summons the grand unicorn - which is centered on the screen.
+    // Clicking 15 times summons the grand unicorn - which is centered on the
+    // screen.
     div.style.top = "50%";
     div.style.left = "50%";
     div.style.zIndex = 143143143;
@@ -74,7 +77,8 @@ var cornify_add = function (options) {
     img.style.opacity = 1;
   };
 
-  // Used as a cache buster so the browser makes a new request every time instead of usign the previous, cached one.
+  // Used as a cache buster so the browser makes a new request every time
+  // instead of usign the previous, cached one.
   var currentTime = new Date();
   var submitTime = currentTime.getTime();
 
@@ -132,9 +136,11 @@ var cornify_add = function (options) {
   body.appendChild(div);
   div.appendChild(img);
 
-  // Hooray - now we have a sparkly unicorn (or rainbow) on the page. Another cornification well done. Congrats!
+  // Hooray - now we have a sparkly unicorn (or rainbow) on the page. Another
+  // cornification well done. Congrats!
 
-  // When clicking 5 times, add a custom stylesheet to make the page look awesome.
+  // When clicking 5 times, add a custom stylesheet to make the page look
+  // awesome.
   if (cornify_count == 5) {
     var cssExisting = document.getElementById("__cornify_css");
 
