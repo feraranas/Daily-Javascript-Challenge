@@ -18,7 +18,7 @@ o _)' > (_)  )  __: (  '\_/ \   ;|  |\ \  |  || (_ o _)  | |   | (_ o._)__||
 */
 
 var cornify_count = 0;
-var cornify_add = function(options) {
+var cornify_add = function (options) {
   // Track how often we cornified.
   cornify_count += 1;
 
@@ -73,7 +73,9 @@ var cornify_add = function(options) {
   img.style.opacity = 0;
   img.style.transition = "all .1s linear";
   img.alt = "A lovely unicorn or rainbow";
-  img.onload = function() { img.style.opacity = 1; };
+  img.onload = function () {
+    img.style.opacity = 1;
+  };
 
   // Used as a cache buster so the browser makes a new request every time
   // instead of usign the previous, cached one.
@@ -86,8 +88,9 @@ var cornify_add = function(options) {
   }
 
   // Construct our unicorn & rainbow request.
-  var url = `https://www.cornify.com/corns/${Math.random() > 0.5 ? "r" : "u"}${
-      Math.ceil(Math.random() * 7)}.gif`;
+  var url = `https://www.cornify.com/corns/${
+    Math.random() > 0.5 ? "r" : "u"
+  }${Math.ceil(Math.random() * 7)}.gif`;
 
   // Add younicorns if requested.
   if (options && (options.y || options.younicorns)) {
@@ -110,7 +113,7 @@ var cornify_add = function(options) {
   // Add a nice hover wigggle.
   img.style.transition = "all .1s linear";
 
-  div.onmouseover = function() {
+  div.onmouseover = function () {
     var size = 1 + Math.round(Math.random() * 10) / 100;
     var angle = Math.round(Math.random() * 20 - 10);
     var result = "rotate(" + angle + "deg) scale(" + size + "," + size + ")";
@@ -119,7 +122,7 @@ var cornify_add = function(options) {
     img.style.webkitTransform = result;
   };
 
-  div.onmouseout = function() {
+  div.onmouseout = function () {
     var size = 0.9 + Math.round(Math.random() * 10) / 100;
     var angle = Math.round(Math.random() * 6 - 3);
     var result = "rotate(" + angle + "deg) scale(" + size + "," + size + ")";
@@ -162,7 +165,7 @@ var cornify_add = function(options) {
 };
 
 // Tracks how often we cornified.
-var cornify_updatecount = function() {
+var cornify_updatecount = function () {
   var id = "__cornify_count";
   var p = document.getElementById(id);
 
@@ -177,8 +180,7 @@ var cornify_updatecount = function() {
     p.style.color = "#ff00ff";
     p.style.textAlign = "center";
     p.style.fontSize = "24px";
-    p.style.fontFamily =
-        "'Comic Sans MS', 'Comic Sans', 'Marker Felt', serif"; // Only the best!
+    p.style.fontFamily = "'Comic Sans MS', 'Comic Sans', 'Marker Felt', serif"; // Only the best!
     p.style.textTransform = "uppercase";
     var body = document.getElementsByTagName("body")[0];
     body.appendChild(p);
@@ -194,14 +196,14 @@ var cornify_updatecount = function() {
   cornify_setcookie("cornify", cornify_count + "", 1000);
 };
 
-var cornify_setcookie = function(name, value, days) {
+var cornify_setcookie = function (name, value, days) {
   var d = new Date();
   d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
   var expires = "expires=" + d.toGMTString();
   document.cookie = name + "=" + value + "; " + expires;
 };
 
-var cornify_getcookie = function(cname) {
+var cornify_getcookie = function (cname) {
   var name = cname + "=";
   var ca = document.cookie.split(";");
   for (var i = 0; i < ca.length; i++) {
@@ -220,7 +222,7 @@ if (isNaN(cornify_count)) {
 }
 
 // Adds happy words at the beginning of all headers on the page.
-var cornify_replace = function() {
+var cornify_replace = function () {
   // Replace text.
   var hc = 6;
   var hs;
@@ -243,14 +245,14 @@ var cornify_replace = function() {
     for (k = 0; k < hs.length; k++) {
       h = hs[k];
       h.innerHTML =
-          words[Math.floor(Math.random() * words.length)] + " " + h.innerHTML;
+        words[Math.floor(Math.random() * words.length)] + " " + h.innerHTML;
     }
     hc -= 1;
   }
 };
 
 // Adds happy words at the beginning of all headers on the page.
-var cornify_replace = function() {
+var cornify_replace = function () {
   var headerTypeIndex = 6;
   var headerElements;
   var headerElement;
@@ -274,8 +276,9 @@ var cornify_replace = function() {
     for (i = 0; i < headerElements.length; i++) {
       headerElement = headerElements[i];
       headerElement.innerHTML =
-          magicalWords[Math.floor(Math.random() * magicalWords.length)] + " " +
-          headerElement.innerHTML;
+        magicalWords[Math.floor(Math.random() * magicalWords.length)] +
+        " " +
+        headerElement.innerHTML;
     }
 
     headerTypeIndex -= 1;
@@ -284,7 +287,7 @@ var cornify_replace = function() {
 
 // Clicking the rainbow cupcake button makes all the unicorns
 // disappear (should only be used in an emergency, since it's sad).
-var cornify_click_cupcake_button = function() {
+var cornify_click_cupcake_button = function () {
   var doc = document;
 
   var corns = doc.getElementsByClassName("__cornify_unicorn");
@@ -311,7 +314,7 @@ var cornify_click_cupcake_button = function() {
 };
 
 // Add the rainbow cupcake button to the page.
-var cornify_add_cupcake_button = function() {
+var cornify_add_cupcake_button = function () {
   var id = "__cornify_cupcake_button";
   var doc = document;
   var button = doc.getElementById(id);
@@ -345,11 +348,11 @@ var cornify_add_cupcake_button = function() {
 
 // Adapted from http://www.snaptortoise.com/konami-js/
 var cornami = {
-  input : "",
-  pattern : "38384040373937396665",
-  clear : setTimeout("cornami.clear_input()", 5000),
-  load : function() {
-    window.document.onkeydown = function(event) {
+  input: "",
+  pattern: "38384040373937396665",
+  clear: setTimeout("cornami.clear_input()", 5000),
+  load: function () {
+    window.document.onkeydown = function (event) {
       if (cornami.input == cornami.pattern) {
         cornify_add();
         clearTimeout(cornami.clear);
@@ -364,7 +367,7 @@ var cornami = {
       }
     };
   },
-  clear_input : function() {
+  clear_input: function () {
     cornami.input = "";
     clearTimeout(cornami.clear);
   },
